@@ -1,0 +1,164 @@
+@font-face {
+  font-family: "Titillium Web";
+  src: local("Titillium Web"), local("TitilliumWeb-Regular"), url("./fonts/titilliumweb.woff2") format("woff2"),
+      url("./fonts/titilliumweb.woff") format("woff"), url("./fonts/titilliumweb.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Titillium Web";
+  src: local("Titillium WebSemiBold"), local("./fonts/TitilliumWeb-SemiBold"),
+      url("./fonts/titilliumwebsemibold.woff2") format("woff2"),
+      url("./fonts/titilliumwebsemibold.woff") format("woff"),
+      url("./fonts/titilliumwebsemibold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Titillium Web";
+  src: local("Titillium WebBlack"), local("TitilliumWeb-Black"),
+      url("./fonts/titilliumwebblack.woff2") format("woff2"), url("./fonts/titilliumwebblack.woff") format("woff"),
+      url("./fonts/titilliumwebblack.ttf") format("truetype");
+  font-weight: 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Bebas Neue";
+  src: local("Bebas Neue Regular"), local("BebasNeueRegular"), url("./fonts/bebasneueregular.woff2") format("woff2"),
+      url("./fonts/bebasneueregular.woff") format("woff"), url("./fonts/bebasneueregular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Bebas Neue";
+  src: local("Bebas Neue Bold"), local("BebasNeueBold"), url("./fonts/bebasneuebold.woff2") format("woff2"),
+      url("./fonts/bebasneuebold.woff") format("woff"), url("./fonts/bebasneuebold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 1088px;
+  margin: 0 auto;
+}
+
+.flex-container {
+  display: flex;
+}
+
+.grid-container {
+  display: grid;
+}
+
+
+@media(min-width: 1400px) {
+  .container {
+       max-width:1300px;
+  }
+}
+
+
+@media(min-width: 992px) {
+  .mobile-only {
+      display: none !important;
+  }
+  header .logo {
+      // margin-right: 10px;
+  }
+}
+
+@media(max-width: 991px) {
+  .desktop-only {
+      display: none !important;
+  }
+  
+  header {
+      display: flex;
+      align-items: flex-start;
+      position: relative;
+      justify-content: space-between;
+      align-items: center;
+      margin:0;
+      height: 60px;
+      padding: 0 5%;
+      .magazine-name {
+          color: #ffb400;
+          font-size: 40px;
+          line-height: 1;
+          margin:0;
+          padding:0;
+          letter-spacing: -2px;
+      }
+
+      .logo {
+         background-image: none;
+         margin: 0;
+         padding: 0;
+      }
+
+      .container {
+
+          &:after, &:before {
+              display: none;
+          }
+          margin: 0;
+      }
+  }
+
+  .burger-btn {
+      padding: 2px 5px;
+      background-color: rgb(221,221,221);
+      border: none;
+      color: rgb(165,165,165);
+      outline: none;
+  }
+
+  nav.mobile-only {
+      position: absolute;
+      top:0;
+      left: 30px;
+      margin:0;
+      background-color: rgba(68,68,68,0.8);
+      transform: translateX(-130%);
+      transition: all .3s ease-in-out;
+      z-index:1;
+
+      &.shown {
+          transform: translateX(0%);
+          transform: translateY(0%);
+      }
+
+      .nav-link {
+          font-size: 14px;
+          color: white;
+          line-height:0.7;
+      }
+  }
+
+  .search {
+      .search-field {    
+          height: 20px;
+          position: absolute;
+          right:0;
+          bottom: 4px;
+          width: 150px;
+          font-size: 10px;
+          transform: translateY(-200%);
+      }
+
+      .search-icon {
+          height: 20px;
+          position: relative;
+      }
+  }
+}
